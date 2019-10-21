@@ -21,6 +21,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DemoTest {
 
+/*
   private static ChromeDriverService service;
   private WebDriver driver;
 
@@ -57,5 +58,6 @@ public class DemoTest {
     driver.get("http://www.google.com");
     // rest of the test...
   }
+*/
 
 }
