@@ -2,8 +2,8 @@ package com.test.selenium;
 
 import com.test.selenium.utils.DataServiceInstance;
 import com.test.selenium.utils.PropertiesReader;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import java.io.File;
 import java.io.IOException;
 import org.junit.AfterClass;
