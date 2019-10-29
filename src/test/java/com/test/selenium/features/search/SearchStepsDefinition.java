@@ -1,10 +1,12 @@
 package com.test.selenium.features.search;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
+
 import com.test.selenium.features.pages.ResultPage;
 import com.test.selenium.features.pages.SearchPage;
+import com.test.selenium.features.pages.WikipediaPage;
 import com.test.selenium.utils.DataServiceInstance;
-import cucumber.api.PendingException;
-import cucumber.api.Result;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -17,14 +19,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-
 public class SearchStepsDefinition {
 
   private WebDriver driver;
   private SearchPage searchPage;
   private ResultPage resultPage;
+  private WikipediaPage wikipediaPage;
 
   @Given("^I’m on the homepage$")
   public void iMOnTheHomepage() throws IOException {
@@ -60,11 +60,32 @@ public class SearchStepsDefinition {
   @Then("^I go to the search results page$")
   public void iGoToTheSearchResultsPage() throws Throwable {
     resultPage = new ResultPage(driver);
-    assertThat(resultPage.getResultStats(), containsString("results"));
+    assertThat(resultPage.getResultStats(), containsString("resultados"));
   }
 
   @And("^the first result is “(.*)”$")
-  public void theFirstResultIsTheNameOfTheWindPatrickRothfuss(String text) {
+  public void theFirstResultIsTheNameOfTheWind(String text) {
     assertThat(resultPage.getFirstResultTitle(), containsString(text));
+  }
+
+  @When("I click on the first result link")
+  public void iClickOnTheFirstResultLink() {
+    resultPage.clickOnFirstLink();
+  }
+
+  @Then("I go to the “The Name of the Wind - Wikipedia” page")
+  public void iGoToTheNameOfTheWindPage() {
+    wikipediaPage = new WikipediaPage(driver);
+    assertThat(wikipediaPage.getHeaderText(), containsString("The Name of the Wind"));
+  }
+
+  @And("the suggestions list is displayed")
+  public void theSuggestionsListIsDisplayed() {
+    searchPage.waitForSuggestions();
+  }
+
+  @And("I click on the first suggestion in the list")
+  public void iClickOnTheFirstSuggestionInTheList() {
+    searchPage.clickOnFirstSuggestion();
   }
 }
