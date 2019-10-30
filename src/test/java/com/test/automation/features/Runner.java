@@ -1,7 +1,7 @@
-package com.test.selenium;
+package com.test.automation.features;
 
-import com.test.selenium.utils.DataServiceInstance;
-import com.test.selenium.utils.PropertiesReader;
+import com.test.automation.utils.DataServiceInstance;
+import com.test.automation.utils.PropertiesReader;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import java.io.File;

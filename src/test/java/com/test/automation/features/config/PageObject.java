@@ -1,4 +1,4 @@
-package com.test.selenium.features.config;
+package com.test.automation.features.config;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

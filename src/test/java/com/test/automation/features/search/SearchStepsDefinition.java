@@ -1,12 +1,12 @@
-package com.test.selenium.features.search;
+package com.test.automation.features.search;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 
-import com.test.selenium.features.pages.ResultPage;
-import com.test.selenium.features.pages.SearchPage;
-import com.test.selenium.features.pages.WikipediaPage;
-import com.test.selenium.utils.DataServiceInstance;
+import com.test.automation.features.pages.ResultPage;
+import com.test.automation.features.pages.SearchPage;
+import com.test.automation.features.pages.WikipediaPage;
+import com.test.automation.utils.DataServiceInstance;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;

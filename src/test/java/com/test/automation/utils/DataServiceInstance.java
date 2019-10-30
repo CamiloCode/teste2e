@@ -1,4 +1,4 @@
-package com.test.selenium.utils;
+package com.test.automation.utils;
 
 import org.openqa.selenium.chrome.ChromeDriverService;
 

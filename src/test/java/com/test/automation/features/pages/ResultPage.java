@@ -1,6 +1,6 @@
-package com.test.selenium.features.pages;
+package com.test.automation.features.pages;
 
-import com.test.selenium.features.config.PageObject;
+import com.test.automation.features.config.PageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
